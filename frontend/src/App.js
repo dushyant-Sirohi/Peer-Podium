@@ -8,10 +8,10 @@ import Rooms from './pages/Rooms/Rooms';
 import { useSelector } from 'react-redux';
 
 
-const isAuth = true;
-const user = {
-    activated: true,
-};
+// const isAuth = true;
+// const user = {
+//     activated: true,
+// };
 
 function App() {
     return (
@@ -36,7 +36,7 @@ function App() {
 }
 
 const GuestRoute = ({ children, ...rest }) => {
-    // const { isAuth } = useSelector((state) => state.auth);
+    const { isAuth } = useSelector((state) => state.auth);
     return (
         <Route
             {...rest}
@@ -57,7 +57,7 @@ const GuestRoute = ({ children, ...rest }) => {
 };
 
 const SemiProtectedRoute = ({ children, ...rest }) => {
-    // const { user, isAuth } = useSelector((state) => state.auth);
+    const { user, isAuth } = useSelector((state) => state.auth);
     return (
         <Route
             {...rest}
@@ -85,7 +85,7 @@ const SemiProtectedRoute = ({ children, ...rest }) => {
 };
 
 const ProtectedRoute = ({ children, ...rest }) => {
-    // const { user, isAuth } = useSelector((state) => state.auth);
+    const { user, isAuth } = useSelector((state) => state.auth);
     return (
         <Route
             {...rest}
